@@ -12,3 +12,5 @@ https://lernantino.github.io/run-buddy/
 
 ## Contribution
 Made by Justin Jenkins
+
+### ©️2019 Run Buddy, Inc 
