@@ -19,6 +19,14 @@ header{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: 80%;
+    background-attachment: fixed;
+
 } /*bolds h1 text,sets font size,color,margin*/
 header h1{
     font-weight:bold;
@@ -51,6 +59,14 @@ header a{
      font-size: 1.55vw;
      text-shadow: 0 0 10px rgba(0, 0, 0,.5);
  }
+/*adds different style for when mouse hovers*/
+ header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
  /* Footer */
  footer{
      display: flex;
@@ -78,11 +94,12 @@ header a{
 .hero{
     background-image: url("../images/hero-bg.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 80%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-attachment: fixed;
 }
 .hero-cta{
     width: 35%;
@@ -125,8 +142,15 @@ header a{
         width: 100%;
         margin-bottom: 15px;
         border-radius: 15px;
+        background-color: rgba(255,255,255,0.75);
     } 
 
+    /*form-input visual effect (focus) */
+    .form-input:focus {
+      background-color: rgba(255,255,255, 1);
+      outline: none;
+    }
+    /*END*/
     .hero-form label{
         margin: 0 5px;
     }
@@ -138,6 +162,11 @@ header a{
         font-size: 16;
         border-radius: 15px;
     }
+
+    .hero-form button:hover {
+      background-color: #39a6b2;  
+    }
+    
     /*hero style end*/
 
     /*Steps Style*/
@@ -207,13 +236,17 @@ header a{
         margin: 50px auto;
         padding-bottom: 50px;
         width: 80%;
-        border-bottom: 1px solid #39a6b2;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
       }
 
+      .step:not(:last-child) {
+        border-bottom: 1px solid #39a6b2;
+      }
+
+ /*TRAINERS*/
  .trainers{ 
      width: 100%;
     margin: 0 auto;
@@ -253,6 +286,8 @@ header a{
    .trainer-bio p{
        font-size: 17px;       
    }
+
+   /*CONTACT*/
    .contact {
     background-color: #024e76;
 }
@@ -294,7 +329,16 @@ header a{
     margin-bottom: 15px;
     margin-top: 5px;
     border-radius: 15px;
+    background-color: rgba(255,255,255,0.75);
 }
+/*FOCUS STYLING*/ 
+.contact-form input:focus, .contact-form textarea:focus{
+  background-color: rgba(255, 255,255,1);
+  outline: none;
+}
+/*FOCUS STYLING END*/
+
+
 .contact-form button{
     width: 100%;
     border: none;
@@ -305,7 +349,13 @@ header a{
     font-size: 16px;
     border-radius: 15px;
     }
-/* service styles begin */
+
+    .contact-form button:hover {
+      color: #fce138;
+      background: #39a6b2;
+    }
+
+/* SERVICES SECTION */
  .services{
      background: #fce138;
  }
@@ -356,6 +406,7 @@ header a{
     /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
     header {
+      position: relative;
         padding-bottom: 0;
         justify-content: center;
       }
