@@ -267,25 +267,35 @@ header a{
    flex: 1;
 }
 .trainer-img{
+  position: relative;
   width: 100%;
   min-height:300px;
   display: flex;
   padding: 15px;
   align-items: flex-end;
-  position: relative;
+  overflow: hidden;
 }
 
+/*HOVER TRAINER IMG*/
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4{
+  top: 0px;
+}
 .trainer-img h3{
   position: relative;
-  z-index: 9556;
+  top: 200px;
+  z-index:9000;
   font-size: 28px;
   margin-bottom: 5px;
+  transition: .6s;
 }
 
 .trainer-img h4{
   position: relative;
-  z-index: 9556;
+  top:200px;
+  z-index: 9000;
   font-size: 22px;
+  transition: .6s;
+  transition-delay: .3s
 }
 
 .trainer-img::after {
@@ -296,6 +306,12 @@ header a{
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transition:all .5s ease-in-out;
+}
+
+.trainer:hover .trainer-img::after{
+  opacity: 1;
 }
 
 .trainer-bio{
@@ -311,11 +327,13 @@ header a{
   }
  .trainer-bio h3{
       font-size: 28px; 
+      display: none;
   }
  .trainer-bio h4 {
       font-weight: lighter;
       font-size: 22px;
       margin-bottom: 15px;
+      display: none;
    }
  .trainer-bio p{
        font-size: 17px;       
@@ -324,16 +342,19 @@ header a{
 .trainer-1{
   background-image: url("../Images/trainer-1.jpg");
   background-size: cover;
+  position: relative;
 }
 
  .trainer-2{
  background-image: url(../Images/trainer-2.jpg);
  background-size: cover;
+ position: relative;
  }
 
  .trainer-3{
    background-image: url(../Images/trainer-3.jpg);
    background-size:cover;
+   position: relative;
  }
 
    /*CONTACT*/
@@ -597,6 +618,13 @@ header a{
     writing-mode: unset;
     grid-column: 1 / -1;
     grid-row: -1;
+  }
+  .trainer-img h3, .trainer-img h4, .trainer-img::after{
+    display: none;
+  }
+
+  .trainer-bio h3, .trainer-bio h4{
+    display:block;
   }
   }
   
